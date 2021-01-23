@@ -36,23 +36,23 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 public class Config {
 
     @ConfigProperty(name = "formatRelatorios")
-    private String formatRelatorios = "pdf";
+    private String formatoRelatorios = "pdf";
 
     @ConfigProperty(name = "tipoGraficos")
     private String tipoGraficos = "barras";
 
     /**
-     * @return the formatRelatorios
+     * @return the formatoRelatorios
      */
-    protected String getFormatRelatorios() {
-        return formatRelatorios;
+    protected String getFormatoRelatorios() {
+        return formatoRelatorios;
     }
 
     /**
-     * @param formatRelatorios the formatRelatorios to set
+     * @param formatoRelatorios the formatoRelatorios to set
      */
-    protected void setFormatRelatorios(String formatRelatorios) {
-        this.formatRelatorios = formatRelatorios;
+    protected void setFormatoRelatorios(String formatoRelatorios) {
+        this.formatoRelatorios = formatoRelatorios;
     }
 
     /**

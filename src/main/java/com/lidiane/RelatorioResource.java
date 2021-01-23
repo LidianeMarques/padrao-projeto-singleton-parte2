@@ -24,10 +24,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/config")
+@Path("/relatorio")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class ConfigResource {
+public class RelatorioResource {
 
     @Inject
     Config config;
@@ -39,14 +39,7 @@ public class ConfigResource {
 
     @PUT
     public void updateConfig(Config newConfig) {
-        /**
-         * Ao fazer isso estamos deixando de usar o padrão Singleton porque um
-         * novo obejto foi criado assim não teremos uma única instancia da
-         * classe. Chamando o config em outra classe o padrão deixa de funcionar
-         * e não atualizando as modificações...
-         */
-        this.config = newConfig;
-//        config.setFormatRelatorios(newConfig.getFormatRelatorios());
-//        config.setTipoGraficos(newConfig.getTipoGraficos());
+        config.setFormatoRelatorios(newConfig.getFormatoRelatorios());
+        config.setTipoGraficos(newConfig.getTipoGraficos());
     }
 }
